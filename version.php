@@ -27,5 +27,5 @@ defined('MOODLE_INTERNAL') || die();
 $plugin->component = 'assignsubmission_xagree';
 $plugin->release = '2022032302';
 $plugin->version = 2022032302;
-$plugin->requires = 2020110900;
+$plugin->requires = 2020110900; // Requires 3.11
 $plugin->maturity = MATURITY_STABLE;
