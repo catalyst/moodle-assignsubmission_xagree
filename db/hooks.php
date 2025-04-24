@@ -1,5 +1,5 @@
 <?php
-// This file is part of Moodle - https://moodle.org/
+// This file is part of Moodle - http://moodle.org/
 //
 // Moodle is free software: you can redistribute it and/or modify
 // it under the terms of the GNU General Public License as published by
@@ -12,20 +12,22 @@
 // GNU General Public License for more details.
 //
 // You should have received a copy of the GNU General Public License
-// along with Moodle.  If not, see <https://www.gnu.org/licenses/>.
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * Plugin version and other meta-data are defined here.
+ * Hook callbacks for Submission agreement
  *
- * @package     assignsubmission_xagree
- * @copyright   2022 Catalyst IT
- * @license     https://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    assignsubmission_xagree
+ * @copyright  2025 Sumaiya Javed <sumaiya.javed@catalyst.net.nz>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->component = 'assignsubmission_xagree';
-$plugin->release = '2025042300';
-$plugin->version = 2025042300;
-$plugin->requires = 2020110900; // Requires 3.11
-$plugin->maturity = MATURITY_STABLE;
+$callbacks = [
+    [
+        'hook' => \core\hook\output\before_standard_top_of_body_html_generation::class,
+        'callback' => [\assignsubmission_xagree\hook_callbacks::class, 'before_standard_top_of_body_html_generation'],
+        'priority' => 0,
+    ],
+];

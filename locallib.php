@@ -184,7 +184,7 @@ class assign_submission_xagree extends assign_submission_plugin {
      * @return array An array of field names and descriptions. (name=>description, ...)
      */
     public function get_editor_fields() {
-        return array('agreement' => get_string('pluginname', 'assignsubmission_agree'));
+        return array('agreement' => get_string('pluginname', 'assignsubmission_xagree'));
     }
 
     /**
